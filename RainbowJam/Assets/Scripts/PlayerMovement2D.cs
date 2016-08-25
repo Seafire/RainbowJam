@@ -7,7 +7,7 @@ public class PlayerMovement2D : MonoBehaviour
 	public float maxSpeed = 20.0f;				// Sets the max speed for the player
 	public float rotSpeed = 180.0f;				// Sets the rotation speed for the player
 
-	float playerBoundsRad = 1.5f;				// To stop the player going off the screen
+	float playerBoundsRad = 1.75f;				// To stop the player going off the screen
 
 	// Use this for initialization
 	void Start () 
