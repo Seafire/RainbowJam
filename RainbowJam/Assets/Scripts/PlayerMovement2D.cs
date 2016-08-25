@@ -18,11 +18,16 @@ public class PlayerMovement2D : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		//Rotate the player
+		//ROTATE
+		// Set the variable to the current rotation values
 		Quaternion rot = transform.rotation;
+		// Calculate the rotation of the z-axis
 		float z = rot.eulerAngles.z;
+		// Alter the z value with input and the max rotation variable over time
 		z -= Input.GetAxis ("Horizontal") * rotSpeed * Time.deltaTime;
+		// Set the rotation value by passing though all changes
 		rot = Quaternion.Euler (0, 0, z);
+		// Set the objects rotation to the new rotation calculated
 		transform.rotation = rot;
 
 		//Move the player
@@ -39,8 +44,9 @@ public class PlayerMovement2D : MonoBehaviour
 			pos.y = -Camera.main.orthographicSize + playerBoundsRad;
 		}
 
+		// Calculate the ratio of the main camera
 		float screenRatio = (float)Screen.width / (float)Screen.height;
-		Debug.Log (screenRatio);
+		//Using the ratio calculate the the camera max width
 		float cameraWidth = Camera.main.orthographicSize * screenRatio;
 
 		if (pos.x + playerBoundsRad > cameraWidth) 
