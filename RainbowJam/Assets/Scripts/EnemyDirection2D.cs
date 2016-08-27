@@ -7,11 +7,15 @@ public class EnemyDirection2D : MonoBehaviour
 	private Transform treePos;
 
 	public float rotSpeed = 180.0f;
+	//public GameObject[] respawnPoint;
 
 	// Use this for initialization
 	void Start () 
 	{
-	
+		//startPos = transform;
+		//startPos = transform.position;
+
+
 	}
 	
 	// Update is called once per frame
@@ -30,7 +34,6 @@ public class EnemyDirection2D : MonoBehaviour
 		//if (treePos = null)
 		//	return;				// Try again
 
-
 		// We are now sure the tree is in the scene
 
 		Vector3 dir = treePos.position - transform.position;
@@ -38,5 +41,6 @@ public class EnemyDirection2D : MonoBehaviour
 		float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
 
 		transform.rotation = Quaternion.Euler (0, 0, zAngle);
+
 	}
 }

@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Sugaropolis\Sugaropolis\Assets\Resources\Subtitles\In_Game_Narrative\Level1_1833_Prompt1.txt">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyRespawn2D.cs">
     <Files>
-      <File FileName="..\..\Sugaropolis\Sugaropolis\Assets\Resources\Subtitles\In_Game_Narrative\Level1_1833_Prompt1.txt" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyMovement2D.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyDirection2D.cs" Line="10" Column="4" />
+      <File FileName="..\..\Sugaropolis\Sugaropolis\Assets\Scripts\Sensors\SCR_CameraTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyRespawn2D.cs" Line="26" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
