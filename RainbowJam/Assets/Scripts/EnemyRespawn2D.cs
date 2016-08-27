@@ -7,12 +7,13 @@ public class EnemyRespawn2D : MonoBehaviour
 	private Transform[] respawnPoint;
 	
 	private bool treeHit;
+	public bool playerHit;
 
 	// Use this for initialization
 	void Start () 
 	{
 		treeHit = false;
-
+		playerHit = false;
 		respawnPoint = respawnHeader.GetComponentsInChildren<Transform>();
 
 	}
@@ -28,12 +29,20 @@ public class EnemyRespawn2D : MonoBehaviour
 			transform.position = respawnPoint[sta].position;
 			treeHit = false;
 		}
+
+		if (playerHit == true) 
+		{
+			
+			int sta = Random.Range(0, (respawnPoint.Length));
+			Debug.Log (sta);
+			transform.position = respawnPoint[sta].position;
+			playerHit = false;
+		}
+
 	}
 
 	void OnTriggerStay2D(Collider2D coll)
-	{
-		Debug.Log (treeHit);
-		
+	{	
 		if (coll.tag == "Tree")
 		{
 			treeHit = true;

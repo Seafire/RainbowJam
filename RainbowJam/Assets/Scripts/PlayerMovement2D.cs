@@ -7,12 +7,16 @@ public class PlayerMovement2D : MonoBehaviour
 	public float maxSpeed = 20.0f;				// Sets the max speed for the player
 	public float rotSpeed = 180.0f;				// Sets the rotation speed for the player
 
-	float playerBoundsRad = 1.75f;				// To stop the player going off the screen
+	private float playerBoundsRad = 1.75f;				// To stop the player going off the screen
+	private bool poweredUp = false;
+	private PickUp pickUp;
+	private EnemyRespawn2D enemyKill;
 
 	// Use this for initialization
 	void Start () 
 	{
-	
+		pickUp = GameObject.FindGameObjectWithTag("PickUp").GetComponent<PickUp>();
+		//enemyKill = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyRespawn2D>();
 	}
 	
 	// Update is called once per frame
@@ -59,5 +63,27 @@ public class PlayerMovement2D : MonoBehaviour
 		}
 
 		transform.position = pos;
+	}
+
+	void OnTriggerStay2D(Collider2D coll)
+	{
+		if (!poweredUp)
+		{
+			if(coll.tag == "PickUp")
+			{
+				poweredUp = true;
+				Debug.Log(poweredUp);
+			}
+		}
+
+		if (poweredUp) 
+		{
+			if(coll.tag == "Enemy")
+			{
+				enemyKill = coll.GetComponent<EnemyRespawn2D> ();
+				enemyKill.playerHit = true;
+				poweredUp = false;
+			}
+		}
 	}
 }

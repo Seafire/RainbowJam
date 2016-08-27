@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\EnemyDirection2D.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement2D.cs" />
      <Compile Include="Assets\Scripts\EnemyRespawn2D.cs" />
+     <Compile Include="Assets\Scripts\PickUp.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
