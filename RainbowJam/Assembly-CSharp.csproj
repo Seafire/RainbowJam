@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\EnemyDirection2D.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement2D.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

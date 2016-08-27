@@ -3,38 +3,22 @@ using System.Collections;
 
 public class EnemyMovement2D : MonoBehaviour 
 {
-
-	private Transform treePos;
+	public float maxSpeed = 2.0f;
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
 	{
 	
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
-		if (treePos == null) 
-		{
-			GameObject tree = GameObject.Find ("IdentaTree");
+		//Move the enemy
+		Vector3 pos = transform.position;
+		Vector3 velocity = new Vector3(0, maxSpeed * Time.deltaTime, 0);
+		pos += transform.rotation * velocity;
 
-			if(tree != null)
-			{
-				treePos = tree.transform;
-			}
-		}
-
-		//if (treePos = null)
-		//	return;				// Try again
-
-
-		// We are now sure the tree is in the scene
-
-		Vector3 dir = treePos.position - transform.position;
-		dir.Normalize ();
-		float zAngle = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg - 90;
-
-		transform.rotation = Quaternion.Euler (0, 0, zAngle);
+		transform.position = pos;
 	}
 }

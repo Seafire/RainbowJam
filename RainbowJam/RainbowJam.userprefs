@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyMovement2D.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Sugaropolis\Sugaropolis\Assets\Resources\Subtitles\In_Game_Narrative\Level1_1833_Prompt1.txt">
     <Files>
-      <File FileName="Assets\Scripts\PlayerMovement2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyMovement2D.cs" Line="1" Column="1" />
+      <File FileName="..\..\Sugaropolis\Sugaropolis\Assets\Resources\Subtitles\In_Game_Narrative\Level1_1833_Prompt1.txt" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
