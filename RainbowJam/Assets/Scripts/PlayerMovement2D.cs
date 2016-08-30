@@ -8,12 +8,14 @@ public class PlayerMovement2D : MonoBehaviour
 	public float rotSpeed = 180.0f;				// Sets the rotation speed for the player
 
 	private float playerBoundsRad = 1.75f;				// To stop the player going off the screen
-	public bool poweredUpPlayer = false;
-	public bool pickUpPlayer = false;
+	[HideInInspector] public bool poweredUpPlayer = false;
+	[HideInInspector] public bool pickUpPlayer = false;
+	private bool pickUpRepeat = false;
 	private PickUp pickUp;
 	private EnemyRespawn2D enemyKill;
 	private PowerUp powerUp;
 	private PauseScreen pauseScreen;
+	private Score score;
 
 	// Use this for initialization
 	void Start () 
@@ -75,7 +77,7 @@ public class PlayerMovement2D : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D coll)
 	{
-		if (!poweredUpPlayer)
+		if (!poweredUpPlayer && !pickUpPlayer)
 		{
 			if(coll.tag == "PowerUp")
 			{
@@ -98,20 +100,30 @@ public class PlayerMovement2D : MonoBehaviour
 
 		if (!pickUpPlayer)
 		{
-			if(coll.tag == "PickUp")
+			if(coll.tag == "PickUp" && !poweredUpPlayer)
 			{
 				pickUp = coll.GetComponent <PickUp> ();
 				pickUpPlayer = true;
 			}
 		}
 		
-		if (pickUpPlayer) 
+		if (pickUpPlayer && !pickUpRepeat) 
 		{
 			if(coll.tag == "Tree")
 			{
-				//enemyKill = coll.GetComponent<EnemyRespawn2D> ();
-				//enemyKill.playerHit = true;
-				//powerUp.powerUpUsed = true;
+				score = coll.GetComponent <Score> ();
+				score.posScore +=100;
+				pickUp.pickUpUsed = true;
+				pickUpPlayer = false;
+			}
+		}
+
+		if (pickUpPlayer && pickUpRepeat) 
+		{
+			if(coll.tag == "Tree")
+			{
+				score = coll.GetComponent <Score> ();
+				score.posScore +=50;
 				pickUp.pickUpUsed = true;
 				pickUpPlayer = false;
 			}

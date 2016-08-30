@@ -5,9 +5,10 @@ public class EnemyRespawn2D : MonoBehaviour
 {
 	public GameObject respawnHeader;
 	private Transform[] respawnPoint;
-	
+
+	private Score score;
 	private bool treeHit;
-	public bool playerHit;
+	[HideInInspector] public bool playerHit;
 
 	// Use this for initialization
 	void Start () 
@@ -45,6 +46,8 @@ public class EnemyRespawn2D : MonoBehaviour
 	{	
 		if (coll.tag == "Tree")
 		{
+			score = coll.GetComponent<Score> ();
+			score.negScore += 50;
 			treeHit = true;
 		}
 	}

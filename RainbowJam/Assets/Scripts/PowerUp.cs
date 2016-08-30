@@ -13,7 +13,7 @@ public class PowerUp : MonoBehaviour
 	public GameObject respawnHeader;
 	private Transform[] respawnPoint;
 
-	public bool powerUpUsed;
+	[HideInInspector] public bool powerUpUsed;
 	protected bool powerUpDropped;
 
 	// Use this for initialization

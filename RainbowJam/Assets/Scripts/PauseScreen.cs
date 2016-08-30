@@ -21,6 +21,7 @@ public class PauseScreen : MonoBehaviour
 		{
 			if (Input.GetKeyDown ("escape")) 
 			{
+				// Do pause menu stuff here
 				gamePaused = true;
 				isGamePaused = true;
 			}
@@ -33,5 +34,15 @@ public class PauseScreen : MonoBehaviour
 				isGamePaused = false;
 			}
 		}
+	}
+
+	public void ResumePressed()
+	{
+
+	}
+
+	public void QuitPressed()
+	{
+
 	}
 }

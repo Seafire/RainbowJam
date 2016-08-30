@@ -10,7 +10,7 @@ public class PickUp : MonoBehaviour
 	public GameObject respawnHeader;
 	private Transform[] respawnPoint;
 	
-	public bool pickUpUsed;
+	[HideInInspector] public bool pickUpUsed;
 	protected bool pickUpDropped;
 	
 	// Use this for initialization
