@@ -1,50 +1,59 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PickUp : MonoBehaviour 
+public class PowerUp : MonoBehaviour 
 {
-	private EnemyRespawn2D enemyKill;
 	
+	//private bool poweredUp = false;
+	private PickUp pickUp;
+	private EnemyRespawn2D enemyKill;
+
 	protected PlayerMovement2D playerPower;
 	
 	public GameObject respawnHeader;
 	private Transform[] respawnPoint;
-	
-	public bool pickUpUsed;
-	protected bool pickUpDropped;
-	
+
+	public bool powerUpUsed;
+	protected bool powerUpDropped;
+
 	// Use this for initialization
 	void Start () 
 	{
-		
-		pickUpUsed = false;
-		pickUpDropped = false;
+
+		powerUpUsed = false;
+		powerUpDropped = false;
 		respawnPoint = respawnHeader.GetComponentsInChildren<Transform>();
 		playerPower = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement2D>();
-		
+	
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (pickUpUsed == true) 
+		if (powerUpUsed == true) 
 		{
 			
 			int sta = Random.Range(0, (respawnPoint.Length));
 			Debug.Log (sta);
 			transform.position = respawnPoint[sta].position;
-			pickUpUsed = false;
+			powerUpUsed = false;
 		}
 		
-		if (pickUpDropped == true) 
+		if (powerUpDropped == true) 
 		{
 			
 			int sta = Random.Range(0, (respawnPoint.Length));
 			Debug.Log (sta);
 			transform.position = respawnPoint[sta].position;
-			pickUpDropped = false;
+			powerUpDropped = false;
 		}
 		
 	}
+
+	void OnTriggerStay2D(Collider2D coll)
+	{	
+
+	}
+
 
 }

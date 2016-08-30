@@ -8,14 +8,16 @@ public class PlayerMovement2D : MonoBehaviour
 	public float rotSpeed = 180.0f;				// Sets the rotation speed for the player
 
 	private float playerBoundsRad = 1.75f;				// To stop the player going off the screen
-	private bool poweredUp = false;
+	public bool poweredUpPlayer = false;
+	public bool pickUpPlayer = false;
 	private PickUp pickUp;
 	private EnemyRespawn2D enemyKill;
+	private PowerUp powerUp;
 
 	// Use this for initialization
 	void Start () 
 	{
-		pickUp = GameObject.FindGameObjectWithTag("PickUp").GetComponent<PickUp>();
+		//pickUp = GameObject.FindGameObjectWithTag("PowerUp").GetComponent<PickUp>();
 		//enemyKill = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyRespawn2D>();
 	}
 	
@@ -67,22 +69,45 @@ public class PlayerMovement2D : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D coll)
 	{
-		if (!poweredUp)
+		if (!poweredUpPlayer)
 		{
-			if(coll.tag == "PickUp")
+			if(coll.tag == "PowerUp")
 			{
-				poweredUp = true;
-				Debug.Log(poweredUp);
+				powerUp = coll.GetComponent <PowerUp> ();
+				poweredUpPlayer = true;
+				Debug.Log(poweredUpPlayer);
 			}
 		}
 
-		if (poweredUp) 
+		if (poweredUpPlayer) 
 		{
 			if(coll.tag == "Enemy")
 			{
 				enemyKill = coll.GetComponent<EnemyRespawn2D> ();
 				enemyKill.playerHit = true;
-				poweredUp = false;
+				powerUp.powerUpUsed = true;
+				poweredUpPlayer = false;
+			}
+		}
+
+		if (!pickUpPlayer)
+		{
+			if(coll.tag == "PickUp")
+			{
+				pickUp = coll.GetComponent <PickUp> ();
+				pickUpPlayer = true;
+			}
+		}
+		
+		if (pickUpPlayer) 
+		{
+			if(coll.tag == "Tree")
+			{
+				//enemyKill = coll.GetComponent<EnemyRespawn2D> ();
+				//enemyKill.playerHit = true;
+				//powerUp.powerUpUsed = true;
+				pickUp.pickUpUsed = true;
+				pickUpPlayer = false;
 			}
 		}
 	}
