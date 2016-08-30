@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
      <Compile Include="Assets\Scripts\PowerUp.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\UI_MainScreen.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
