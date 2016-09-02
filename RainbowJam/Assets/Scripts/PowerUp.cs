@@ -17,7 +17,7 @@ public class PowerUp : MonoBehaviour
 	protected bool powerUpDropped;
 
 	// Use this for initialization
-	void Start () 
+	public void Start () 
 	{
 
 		powerUpUsed = false;
@@ -28,13 +28,12 @@ public class PowerUp : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	public void Update () 
 	{
 		if (powerUpUsed == true) 
 		{
 			
 			int sta = Random.Range(0, (respawnPoint.Length));
-			Debug.Log (sta);
 			transform.position = respawnPoint[sta].position;
 			powerUpUsed = false;
 		}
@@ -43,7 +42,6 @@ public class PowerUp : MonoBehaviour
 		{
 			
 			int sta = Random.Range(0, (respawnPoint.Length));
-			Debug.Log (sta);
 			transform.position = respawnPoint[sta].position;
 			powerUpDropped = false;
 		}

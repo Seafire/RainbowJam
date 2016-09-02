@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\EnemyAnimation.cs" />
      <Compile Include="Assets\Scripts\EnemyDirection2D.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement2D.cs" />
      <Compile Include="Assets\Scripts\EnemyRespawn2D.cs" />
@@ -54,6 +55,8 @@
      <Compile Include="Assets\Scripts\PickUp.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
      <Compile Include="Assets\Scripts\PowerUp.cs" />
+     <Compile Include="Assets\Scripts\PowerUpHat.cs" />
+     <Compile Include="Assets\Scripts\PowerUpPeanut.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\UI_MainScreen.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

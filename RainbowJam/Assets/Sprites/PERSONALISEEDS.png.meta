@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 433c62757f8baab4faf2af9c2f8cdfd6
-timeCreated: 1472817492
+timeCreated: 1472827342
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,6 +16,7 @@ TextureImporter:
     21300018: PERSONALISEEDS_37
     21300020: PERSONALISEEDS_38
     21300022: PERSONALISEEDS_39
+    21300024: PERSONALISEEDS_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -65,7 +66,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 180
-        y: 678
+        y: 679
         width: 398
         height: 273
       alignment: 0
@@ -99,7 +100,7 @@ TextureImporter:
         width: 7
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: PERSONALISEEDS_32
       rect:
@@ -109,7 +110,7 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: PERSONALISEEDS_33
       rect:
@@ -119,7 +120,7 @@ TextureImporter:
         width: 414
         height: 263
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: PERSONALISEEDS_34
       rect:
@@ -139,7 +140,7 @@ TextureImporter:
         width: 479
         height: 311
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: PERSONALISEEDS_36
       rect:
@@ -149,7 +150,7 @@ TextureImporter:
         width: 13
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: PERSONALISEEDS_37
       rect:
@@ -159,7 +160,7 @@ TextureImporter:
         width: 10
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: PERSONALISEEDS_38
       rect:
@@ -169,7 +170,7 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: PERSONALISEEDS_39
       rect:
@@ -179,7 +180,17 @@ TextureImporter:
         width: 36
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PERSONALISEEDS_4
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 895
+        width: 296
+        height: 177
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -8,10 +8,15 @@ public class PickUp : MonoBehaviour
 	protected PlayerMovement2D playerPower;
 	
 	public GameObject respawnHeader;
+	public enum SeedList {Happy, Love, Creative, Stylish};
 	private Transform[] respawnPoint;
 	
 	[HideInInspector] public bool pickUpUsed;
+	[HideInInspector] public int pickedUpBefore = 0;
+	[HideInInspector] public bool curPickedUp;
 	protected bool pickUpDropped;
+	private Animator anim;
+	private PlayerMovement2D player;
 	
 	// Use this for initialization
 	void Start () 
@@ -19,8 +24,11 @@ public class PickUp : MonoBehaviour
 		
 		pickUpUsed = false;
 		pickUpDropped = false;
+		curPickedUp = false;
 		respawnPoint = respawnHeader.GetComponentsInChildren<Transform>();
-		playerPower = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement2D>();
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement2D>();
+		anim = gameObject.GetComponentInChildren <Animator> ();
+
 		
 	}
 	
@@ -29,22 +37,47 @@ public class PickUp : MonoBehaviour
 	{
 		if (pickUpUsed == true) 
 		{
-			
+			anim.SetBool("isPickedUp", false);
 			int sta = Random.Range(0, (respawnPoint.Length));
 			Debug.Log (sta);
 			transform.position = respawnPoint[sta].position;
 			pickUpUsed = false;
+			//curPickedUp = false;
 		}
 		
 		if (pickUpDropped == true) 
 		{
-			
+			anim.SetBool("isPickedUp", false);	
 			int sta = Random.Range(0, (respawnPoint.Length));
-			Debug.Log (sta);
 			transform.position = respawnPoint[sta].position;
 			pickUpDropped = false;
 		}
 		
+	}
+
+	void PickUpKill()
+	{
+		//delayTime -= Time.deltaTime;
+		//if(delayTime < 0)
+		//{
+		if (!player.curPickUp)
+		{
+			Debug.Log("Hello darkness my old friend");
+			anim.SetBool("isPickedUp", true);
+			pickedUpBefore ++;
+			Debug.Log (pickedUpBefore);
+			//curPickedUp = true;
+		}
+		//}
+	}
+
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		if (coll.tag == "Player") 
+		{
+			PickUpKill();
+		}
+
 	}
 
 }

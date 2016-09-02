@@ -23,7 +23,7 @@ public class Score : MonoBehaviour
 	void Update () 
 	{
 		//Debug.Log ("Current Positive Score: " + posScore);
-		Debug.Log ("Current Negative Score: " + negScore);
+		//Debug.Log ("Current Negative Score: " + negScore);
 
 		totalScore = posScore + negScore;
 

@@ -10,12 +10,17 @@ public class PlayerMovement2D : MonoBehaviour
 	private float playerBoundsRad = 1.75f;				// To stop the player going off the screen
 	[HideInInspector] public bool poweredUpPlayer = false;
 	[HideInInspector] public bool pickUpPlayer = false;
+	[HideInInspector] public bool curPickUp = false;
 	private bool pickUpRepeat = false;
+	private int isHappy, isCreative, isLove, isStylish = 0;
 	private PickUp pickUp;
 	private EnemyRespawn2D enemyKill;
 	private PowerUp powerUp;
 	private PauseScreen pauseScreen;
 	private Score score;
+	private float delayTime = 0.1f;
+
+	private PickUp.SeedList currentSeed;
 
 	// Use this for initialization
 	void Start () 
@@ -75,11 +80,43 @@ public class PlayerMovement2D : MonoBehaviour
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D coll)
+	void WhatSeed()
+	{
+		switch (currentSeed) 
+		{
+		case PickUp.SeedList.Creative:
+			isCreative ++;
+			break;
+		case PickUp.SeedList.Happy:
+			isHappy ++;
+			break;
+		case PickUp.SeedList.Love:
+			isLove ++;
+			break;
+		case PickUp.SeedList.Stylish:
+			isStylish ++;
+			break;
+		}
+	}
+
+	void RemovePickUp()
+	{
+		if (!curPickUp)
+		{
+			delayTime -= Time.deltaTime;
+			if (delayTime < 0.0f)
+			{
+				Debug.Log ("I'm here help");
+				delayTime = 0.1f;
+			}
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D coll)
 	{
 		if (!poweredUpPlayer && !pickUpPlayer)
 		{
-			if(coll.tag == "PowerUp")
+			if(coll.tag == "PowerUpPeanut")
 			{
 				powerUp = coll.GetComponent <PowerUp> ();
 				poweredUpPlayer = true;
@@ -100,9 +137,10 @@ public class PlayerMovement2D : MonoBehaviour
 
 		if (!pickUpPlayer)
 		{
-			if(coll.tag == "PickUp" && !poweredUpPlayer)
+			if(coll.tag == "PickUp" && !poweredUpPlayer && !curPickUp)
 			{
 				pickUp = coll.GetComponent <PickUp> ();
+				curPickUp = true;
 				pickUpPlayer = true;
 			}
 		}
@@ -111,14 +149,25 @@ public class PlayerMovement2D : MonoBehaviour
 		{
 			if(coll.tag == "Tree")
 			{
+
 				score = coll.GetComponent <Score> ();
-				score.posScore +=100;
+				
+				if(pickUp.pickedUpBefore == 1)
+				{
+					score.posScore +=100;
+				}
+				if(pickUp.pickedUpBefore > 1)
+				{
+					score.posScore +=50;
+				}
+
 				pickUp.pickUpUsed = true;
 				pickUpPlayer = false;
+				curPickUp = false;
 			}
 		}
 
-		if (pickUpPlayer && pickUpRepeat) 
+		/*if (pickUpPlayer && pickUpRepeat) 
 		{
 			if(coll.tag == "Tree")
 			{
@@ -127,6 +176,6 @@ public class PlayerMovement2D : MonoBehaviour
 				pickUp.pickUpUsed = true;
 				pickUpPlayer = false;
 			}
-		}
+		}*/
 	}
 }
