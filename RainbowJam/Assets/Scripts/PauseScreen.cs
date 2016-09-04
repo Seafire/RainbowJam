@@ -10,7 +10,7 @@ public class PauseScreen : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		gamePaused = false;
+		//gamePaused = false;
 		isGamePaused = false;
 	}
 	
