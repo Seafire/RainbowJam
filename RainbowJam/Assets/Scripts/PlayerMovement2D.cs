@@ -212,9 +212,9 @@ public class PlayerMovement2D : MonoBehaviour
 			{
 				powerUp = coll.GetComponent <PowerUp> ();
 				poweredUpPlayer = true;
-				powerUp.powerUpUsed = true;
+				powerUp.powerUpUsed = false;
 				shoot = true;
-				shootTimer = 3.0f;
+				shootTimer = 4.0f;
 			}
 		}
 		if (!pickUpPlayer && !shoot)
