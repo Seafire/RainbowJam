@@ -2,16 +2,17 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="d:\RainbowJam\RainbowJam\Assets\Wwise\Deployment\Components\AkBankManager.cs">
     <Files>
+      <File FileName="Assets\Scripts\DestroyBullet.cs" Line="8" Column="9" />
       <File FileName="Assets\Scripts\BulletMovement2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Shooting.cs" Line="20" Column="3" />
+      <File FileName="Assets\Scripts\Shooting.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\EnemyMovement2D.cs" Line="1" Column="1" />
-      <File FileName="d:\RainbowJam\RainbowJam\Assets\Scripts\EnemyDirection2D.cs" Line="81" Column="4" />
-      <File FileName="Assets\Scripts\PlayerMovement2D.cs" Line="230" Column="48" />
-      <File FileName="Assets\Scripts\PowerUp.cs" Line="17" Column="32" />
-      <File FileName="Assets\Scripts\PickUp.cs" Line="78" Column="14" />
-      <File FileName="Assets\Scripts\DestroyBullet.cs" Line="1" Column="1" />
-      <File FileName="d:\RainbowJam\RainbowJam\Assets\Wwise\Deployment\Components\AkBankManager.cs" Line="123" Column="68" />
-      <File FileName="Assets\Scripts\RainDrop.cs" Line="8" Column="30" />
+      <File FileName="d:\RainbowJam\RainbowJam\Assets\Scripts\EnemyDirection2D.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerMovement2D.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PowerUp.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PickUp.cs" Line="1" Column="1" />
+      <File FileName="d:\RainbowJam\RainbowJam\Assets\Wwise\Deployment\Components\AkBankManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RainDrop.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyRespawn2D.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
