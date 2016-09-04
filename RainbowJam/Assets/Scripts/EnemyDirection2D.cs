@@ -38,6 +38,10 @@ public class EnemyDirection2D : MonoBehaviour
 		// We are now sure the tree is in the scene
 
 		Vector3 dir = treePos.position - transform.position;
+		//if (Mathf.Abs (dir) < 5.0f) 
+		//{
+
+		//}
 		dir.Normalize ();
 		float facing = dir.x;
 		FlipSprite (facing);

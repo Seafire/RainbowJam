@@ -30,7 +30,7 @@ public class PowerUp : MonoBehaviour
 	// Update is called once per frame
 	public void Update () 
 	{
-		if (powerUpUsed == true) 
+		if (powerUpUsed == true && !playerPower.shoot) 
 		{
 			
 			int sta = Random.Range(0, (respawnPoint.Length));

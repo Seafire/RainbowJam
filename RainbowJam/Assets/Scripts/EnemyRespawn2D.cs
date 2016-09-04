@@ -41,7 +41,13 @@ public class EnemyRespawn2D : MonoBehaviour
 		}
 
 	}
-
+	void OnTriggerEnter2D (Collider2D coll)
+	{
+		if (coll.tag == "Bullet") 
+		{
+			treeHit = true;
+		}
+	}
 	void OnTriggerStay2D(Collider2D coll)
 	{	
 		if (coll.tag == "Tree")

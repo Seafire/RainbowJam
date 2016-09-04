@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BulletMovement2D.cs" />
+     <Compile Include="Assets\Scripts\DestroyBullet.cs" />
      <Compile Include="Assets\Scripts\EnemyAnimation.cs" />
      <Compile Include="Assets\Scripts\EnemyDirection2D.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement2D.cs" />
@@ -57,10 +59,12 @@
      <Compile Include="Assets\Scripts\PowerUp.cs" />
      <Compile Include="Assets\Scripts\PowerUpHat.cs" />
      <Compile Include="Assets\Scripts\PowerUpPeanut.cs" />
+     <Compile Include="Assets\Scripts\RainDrop.cs" />
      <Compile Include="Assets\Scripts\SCR_MovePlatform.cs" />
      <Compile Include="Assets\Scripts\SCR_Patrol.cs" />
      <Compile Include="Assets\Scripts\SCR_RaycastMaster.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\Shooting.cs" />
      <Compile Include="Assets\Scripts\Tree.cs" />
      <Compile Include="Assets\Scripts\Tutorial.cs" />
      <Compile Include="Assets\Scripts\UI_MainScreen.cs" />

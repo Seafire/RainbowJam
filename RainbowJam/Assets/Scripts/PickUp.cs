@@ -60,7 +60,7 @@ public class PickUp : MonoBehaviour
 		//delayTime -= Time.deltaTime;
 		//if(delayTime < 0)
 		//{
-		if (!player.curPickUp)
+		if (!player.curPickUp && !player.shoot)
 		{
 			Debug.Log("Hello darkness my old friend");
 			anim.SetBool("isPickedUp", true);
